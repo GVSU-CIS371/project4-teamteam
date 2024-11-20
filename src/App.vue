@@ -23,7 +23,13 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-
+// Importing product Pinia store we created. 
+import { useProductStore } from "./stores/ProductStore";
+// Assigning product store to our variable 
+const productStore = useProductStore();
+// Calling the function to populating the store with items.
+productStore.init()
+console.log(productStore.products)
 const links = ref([
   { text: "Home", to: "/", icon: "mdi-home" },
   { text: "Electronics", to: "/electronics", icon: "mdi-laptop" },
