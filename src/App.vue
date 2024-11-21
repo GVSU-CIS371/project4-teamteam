@@ -8,6 +8,8 @@
       </v-btn>
     </v-app-bar>
     <v-main class="bg-blue-lighten-5">
+        <store-item>
+        </store-item>
       <router-view v-slot="{ Component }">
         <transition name="shrink-explode">
           <component :is="Component" />
@@ -22,7 +24,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import StoreItem from "./components/StoreItem.vue";
+import { compile, ref } from "vue";
 // Importing product Pinia store we created. 
 import { useProductStore } from "./stores/ProductStore";
 // Assigning product store to our variable 
