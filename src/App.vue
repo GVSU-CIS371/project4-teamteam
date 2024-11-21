@@ -29,8 +29,7 @@ import { useProductStore } from "./stores/ProductStore";
 const productStore = useProductStore();
 // Calling the function to populating the store with items.
 productStore.init()
-console.log(productStore.products);
-productStore.filterByCategory('Clothing');
+productStore.filterByRating(3);
 console.log(productStore.products);
 const links = ref([
   { text: "Home", to: "/", icon: "mdi-home" },
