@@ -22,6 +22,7 @@
                     :price="item.data.price"
                     :rating="item.data.rating"
                     :stock="item.data.stock"
+                    :image="item.data.image"
                 />
             </v-col>
         </v-row>
