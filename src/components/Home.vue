@@ -16,6 +16,7 @@
                     :rating="item.data.rating"
                     :stock="item.data.stock"
                     :image="item.data.image"
+                    :category="item.data.category"
                 />
             </v-col>
         </v-row>

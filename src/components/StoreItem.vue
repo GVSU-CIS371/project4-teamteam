@@ -27,6 +27,5 @@
 import { ref } from 'vue';
 import { Product } from '../types/product';
 const product = defineProps<Product>()
-console.log('Rating:', product.rating);
 // your answer
 </script>

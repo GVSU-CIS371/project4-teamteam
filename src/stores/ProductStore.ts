@@ -24,12 +24,16 @@ export const useProductStore = defineStore("ProductStore", {
         init() {
             // Assigning our products to be the initial products list.
             this.products = initProducts;
-            console.log("In init funciton")
         },
 
+        // string because this is the category we're filtering based off of.
         filterByCategory(category: string) {
-            // string because this is the category we're filtering based off of.
+            // we have to call this.init() first because if we skipped that step and only filtered then when we use this function to filter
+            // electronics and then filter clothing items immediately after, there would be no clothing items because we've
+            // already filtered for the electronics items first.
+            this.init();
             this.products = this.products.filter((product) => filterForCategory(product, category));
+
         },
 
         filterByRating(minRating: number) {
