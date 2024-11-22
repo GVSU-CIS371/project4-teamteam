@@ -21,7 +21,7 @@
                     :description="item.data.name"
                     :price="item.data.price"
                     :rating="item.data.rating"
-
+                    :stock="item.data.stock"
                 />
             </v-col>
         </v-row>
