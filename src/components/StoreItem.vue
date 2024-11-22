@@ -1,9 +1,10 @@
 <template>
-<v-card class="pa-5 ma-1" max-height="400" max-width="300">
+<v-card class="pa-5 ma-1" >
 
     <v-card-item :title="product.name">
         <template v-slot:subtitle>
-            <template v-for="i in product.rating" :key="i">
+            <!-- need to round otherwise it breaks application since can't loop over a decimal number. -->
+            <template v-for="i in Math.round(product.rating)">
                 <v-icon color="yellow" icon="mdi-star"></v-icon>
             </template>
 
@@ -16,9 +17,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-
 import { Product } from '../types/product';
 const product = defineProps<Product>()
-
+console.log('Rating:', product.rating);
 // your answer
 </script>

@@ -11,9 +11,18 @@
         <!-- v-for loop to display a card for each item in the store  -->
          <v-row>
             <!-- have to use the reference so vuetify will work properly -->
-            <v-col cols="3" class="" v-for="item in prodsArray">
-                <StoreItem>
-                </StoreItem>
+            <v-col 
+            cols="3" 
+            v-for="item in prodsArray" 
+            :key="item.id"
+            >
+                <StoreItem 
+                    :name="item.data.name"
+                    :description="item.data.name"
+                    :price="item.data.price"
+                    :rating="item.data.rating"
+
+                />
             </v-col>
         </v-row>
 
@@ -41,7 +50,7 @@ const productStore = useProductStore();
 productStore.init()
 // has to be reference so vuetify will work properly.
 const prodsArray = ref(productStore.products);
-console.log(productStore.products);
+console.log('products loaded are:', productStore.products);
 const links = ref([
   { text: "Home", to: "/", icon: "mdi-home" },
   { text: "Electronics", to: "/electronics", icon: "mdi-laptop" },
