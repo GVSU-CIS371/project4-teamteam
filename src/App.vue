@@ -18,7 +18,7 @@
             >
                 <StoreItem 
                     :name="item.data.name"
-                    :description="item.data.name"
+                    :description="item.data.description"
                     :price="item.data.price"
                     :rating="item.data.rating"
                     :stock="item.data.stock"

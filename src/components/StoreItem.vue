@@ -1,7 +1,6 @@
 <template>
-<v-card class="pa-5 ma-1" >
-
-    <v-card-item class="ma-1" :title="product.name">
+<v-card class="pa-5 ma-1" height="400" >
+    <v-card-item class="ma-1" :title="product.name"></v-card-item>
             <v-row class="flex-column" justify="center" align="center">
                 <v-row>
                     <v-col cols="12">
@@ -15,9 +14,9 @@
                     <!-- <v-icon color="yellow" icon="mdi-star-outline"></v-icon> -->
                 </v-row>
                 <img :src="product.image" alt="image of the item being displayed" height="190" width="150">
+                <p class="ma-2 pa-2" color="black">{{ product.description }}</p> 
             </v-row>
 
-    </v-card-item>
 
 </v-card>
 
