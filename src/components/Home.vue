@@ -8,6 +8,7 @@
             v-for="item in prodsArray" 
             :key="item.id"
             >
+            <!-- pass store item props that are needed -->
                 <StoreItem 
                     :name="item.data.name"
                     :description="item.data.description"
