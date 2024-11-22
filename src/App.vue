@@ -22,8 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import StoreItem from "./components/StoreItem.vue";
-import { compile, ref } from "vue";
+import {ref } from "vue";
 // Importing product Pinia store we created. 
 import { useProductStore } from "./stores/ProductStore";
 // Assigning product store to our variable 
@@ -31,7 +30,6 @@ const productStore = useProductStore();
 // Calling the function to populating the store with items.
 productStore.init()
 // has to be reference so vuetify will work properly.
-const prodsArray = ref(productStore.products);
 console.log('products loaded are:', productStore.products);
 const links = ref([
   { text: "Home", to: "/", icon: "mdi-home" },

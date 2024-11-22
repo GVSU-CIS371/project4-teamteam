@@ -5,7 +5,7 @@
                 <v-row>
                     <v-col cols="12">
             <!-- need to round otherwise it breaks application since can't loop over a decimal number. -->
-                        <v-icon v-for="i in Math.round(product.rating)" color="yellow" icon="mdi-star"></v-icon>
+                        <v-icon v-for="i in Math.round(product.rating)" :key="i" color="yellow" icon="mdi-star"></v-icon>
                         <v-icon color="green" icon="mdi-currency-usd"></v-icon>{{ product.price }}
                         <v-icon color="blue" icon="mdi-pound"></v-icon> {{ product.stock }}
 
@@ -24,7 +24,6 @@
 
 <script lang="ts" setup>
 
-import { ref } from 'vue';
 import { Product } from '../types/product';
 const product = defineProps<Product>()
 // your answer

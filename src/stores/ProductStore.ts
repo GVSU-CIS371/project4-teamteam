@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { Product, ProductDoc } from "../types/product";
+import {ProductDoc } from "../types/product";
 import { initProducts } from "../data-init";
 
 // function to be used by the filter function for filtering by category.
