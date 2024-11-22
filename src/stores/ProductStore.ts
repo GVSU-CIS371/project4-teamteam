@@ -36,8 +36,12 @@ export const useProductStore = defineStore("ProductStore", {
 
         },
 
+        // filter products with ratings above minRating value.
         filterByRating(minRating: number) {
-            // filter products with ratings above minRating value.
+            // we have to call this.init() first because if we skipped that step and only filtered then when we use this function to filter
+            // electronics and then filter best seller immediately items immediately after, there would be  items from the original list missing because we've
+            // already filtered for ONLY the electronic items first.
+            this.init();
             this.products = this.products.filter( (product) => filterForRating(product, minRating));
 
         }

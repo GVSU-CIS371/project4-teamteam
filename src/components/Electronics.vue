@@ -34,5 +34,4 @@ productStore.filterByCategory("Electronics");
 // get a reference to this data so that our loop can function properly.
 const prodsArray = ref(productStore.products);
 
-console.log('All Electronics products are:', productStore.products);
 </script>
