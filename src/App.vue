@@ -9,16 +9,13 @@
     </v-app-bar>
     <v-main class="bg-blue-lighten-5">
         <!-- v-for loop to display a card for each item in the store  -->
-        <template v-for="item in productStore.products" :key="item.id">
-            <store-item :name="item.data.name" 
-            :description="item.data.description" 
-            :price="item.data.price" 
-            :rating="item.data.rating" 
-            :stock="item.data.stock"
-            :image="item.data.image"
-            :category="item.data.category" >
-            </store-item>
-        </template>
+         <v-row>
+            <!-- have to use the reference so vuetify will work properly -->
+            <v-col cols="3" class="" v-for="item in prodsArray">
+                <StoreItem>
+                </StoreItem>
+            </v-col>
+        </v-row>
 
       <router-view v-slot="{ Component }">
         <transition name="shrink-explode">
@@ -42,7 +39,8 @@ import { useProductStore } from "./stores/ProductStore";
 const productStore = useProductStore();
 // Calling the function to populating the store with items.
 productStore.init()
-productStore.filterByRating(3);
+// has to be reference so vuetify will work properly.
+const prodsArray = ref(productStore.products);
 console.log(productStore.products);
 const links = ref([
   { text: "Home", to: "/", icon: "mdi-home" },
