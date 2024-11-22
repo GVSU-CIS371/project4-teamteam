@@ -11,6 +11,7 @@ import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 import router from "./router";
 
+
 const vuetify = createVuetify({
   icons: {
     defaultSet: "mdi",
@@ -21,5 +22,6 @@ const vuetify = createVuetify({
   components,
   directives,
 });
+
 const pinia = createPinia();
 createApp(App).use(vuetify).use(pinia).use(router).mount("#app");

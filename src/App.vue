@@ -8,25 +8,6 @@
       </v-btn>
     </v-app-bar>
     <v-main class="bg-blue-lighten-5">
-        <!-- v-for loop to display a card for each item in the store  -->
-         <v-row>
-            <!-- have to use the reference so vuetify will work properly -->
-            <v-col 
-            cols="3" 
-            v-for="item in prodsArray" 
-            :key="item.id"
-            >
-                <StoreItem 
-                    :name="item.data.name"
-                    :description="item.data.description"
-                    :price="item.data.price"
-                    :rating="item.data.rating"
-                    :stock="item.data.stock"
-                    :image="item.data.image"
-                />
-            </v-col>
-        </v-row>
-
       <router-view v-slot="{ Component }">
         <transition name="shrink-explode">
           <component :is="Component" />
