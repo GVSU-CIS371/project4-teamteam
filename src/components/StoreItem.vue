@@ -1,7 +1,8 @@
 <template>
     <v-hover v-slot="{ isHovering, props }">
-        <v-card :class="{ 'on-hover': isHovering }" :elevation="isHovering ? 16 : 1" v-bind="props" class="pa-5"
-            height="525">
+        <v-card :class="{ 'on-hover': isHovering }" :elevation="isHovering ? 16 : 1" style="cursor: pointer;"
+            v-bind="props" class="pa-5" height="525">
+
             <v-card-title><b>{{ product.name }}</b></v-card-title>
             <v-card-text class="pa-3 pl-7">
                 <v-row>
@@ -14,6 +15,7 @@
             </v-card-text>
             <v-img :src="product.image" alt="image of the item being displayed" height="228px" class="mt-10"></v-img>
             <v-card-text class="px-12 pt-10">{{ product.description }}</v-card-text>
+
         </v-card>
     </v-hover>
 </template>
