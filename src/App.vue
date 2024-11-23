@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import {ref } from "vue";
+import { ref } from "vue";
 // Importing product Pinia store we created. 
 import { useProductStore } from "./stores/ProductStore";
 // Assigning product store to our variable 

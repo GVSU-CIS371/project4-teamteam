@@ -1,5 +1,4 @@
 <template>
-    <!-- your answer -->
     <!-- v-for loop to display a card for each item in the store  -->
     <v-row class="max-width-row ma-1">
         <!-- have to use the reference so vuetify will work properly -->
