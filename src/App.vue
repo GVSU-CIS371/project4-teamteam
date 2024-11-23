@@ -30,7 +30,6 @@ const productStore = useProductStore();
 // Calling the function to populating the store with items.
 productStore.init()
 // has to be reference so vuetify will work properly.
-console.log('products loaded are:', productStore.products);
 const links = ref([
   { text: "Home", to: "/", icon: "mdi-home" },
   { text: "Electronics", to: "/electronics", icon: "mdi-laptop" },
